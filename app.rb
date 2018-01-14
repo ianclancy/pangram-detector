@@ -34,3 +34,17 @@ input = gets.chomp.downcase
 input.each_char do |char|
   letters[char] = true
 end
+
+pangram = true
+
+letters.each do |letter, value|
+  if !letters[letter]
+    pangram = false
+  end
+end
+
+if pangram
+  puts "This sentence is a pangram!"
+else
+  puts "Sorry, this sentence is not a pangram."
+end
